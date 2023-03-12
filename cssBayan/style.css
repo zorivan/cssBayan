@@ -1,0 +1,105 @@
+body
+{
+    background-color: #e8e2d7;
+    overflow-y: scroll;
+}
+
+.container
+{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container:hover .text,
+input:checked .text
+{
+    color: #000;
+}
+
+.accordion-panel:active .text
+{
+    color: #480707;
+}
+
+.icon
+{
+    display: none;
+    width: 1rem;
+    background: url(assets/icons/plus.svg) center center no-repeat;
+}
+
+.accordion-panel:active .icon
+{
+    background: url(assets/icons/plus-brown.svg) center center no-repeat;
+}
+
+.container:hover .icon
+{
+    display: block;
+}
+
+.accordion-panel:hover .icon,
+input:checked ~ .icon
+{
+    transition: 0.2s linear;
+    transform: rotate(45deg);
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.accordion-panel
+{
+    margin-bottom: 0.6rem;
+}
+
+.accordion-panel:hover
+{
+    cursor: pointer;
+}
+
+.accordion-panel img
+{
+    text-align: center;
+}
+
+.accordion-summary
+{
+    display: flex;
+    justify-content: space-between;
+    color: #480707;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    padding: 0.5rem;
+}
+
+.accordion-content
+{
+    display: none;
+    text-align: center;
+}
+
+.accordion-panel:hover input:not(:checked) ~ .accordion-content
+{
+    display: block;
+    animation: fadeIn 1s;
+}
+
+input:checked ~ .accordion-content
+{
+    display: block;
+}
+
+@keyframes fadeIn
+{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
